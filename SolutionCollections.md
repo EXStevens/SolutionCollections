@@ -36,22 +36,22 @@ tar -tvf ARCHIVE
 ```Bash
 # tar
 tar -cf FILE.tar FILE
-tar -xf FILE.tar <Assigned File> <-C OutputDirectory>(Optional)
+tar -xf FILE.tar ASSIGNED_FILE (-C OutputDirectory)
 ```
 ```Bash
 # tar.GZ [-z]
 tar -czf FILE.tar.gz FILE
-tar -xzf FILE.tar.gz <Assigned File> <-C OutputDirectory>(Optional)
+tar -xzf FILE.tar.gz ASSIGNED_FILE (-C OutputDirectory)
 ```
 ```Bash
 # tar.BZ2 [-j]
 tar -cjf FILE.tar.bz2 FILE
-tar -xjf FILE.tar.bz2 <Assigned File> <-C OutputDirectory>(Optional)
+tar -xjf FILE.tar.bz2 ASSIGNED_FILE (-C OutputDirectory)
 ```
 ```Bash
 # tar.XZ [-J]
 tar -cJf FILE.tar.xz FILE
-tar -xJf FILE.tar.xz <Assigned File> <-C OutputDirectory>(Optional)
+tar -xJf FILE.tar.xz ASSIGNED_FILE (-C OutputDirectory)
 ```
 <details>
 <summary>Explanation of Parameters</summary>
