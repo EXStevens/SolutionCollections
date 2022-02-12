@@ -2,7 +2,7 @@
 
 (Without any description, solutions have been experimenting on CentOS 8+, Rocky 8) - *2/5/2022*
 
-## Linux Configs
+## Linux Guides
 
 ***
 
@@ -12,7 +12,7 @@
 
 ```Bash
 sudo vim /etc/ssh/sshd_config
-// #Port 22 -> Port ***
+// #Port 22 -> Port UR_PORT
 
 systemctl restart sshd
 ```
@@ -21,14 +21,11 @@ systemctl restart sshd
 
 ```Bash
 sudo vim /etc/ssh/sshd_config
-// #Port 22 -> Port ***
+// #Port 22 -> Port UR_PORT
 
 sudo service ssh restart
 ```
 
-## Linux Basics
-
-***
 
 ### **Compression**
 
@@ -109,6 +106,15 @@ gunzip FILE.gz
 zip FILE.zip FILE
 unzip FILE.zip
 ```
+
+### **SWAP Partition**
+
+1. Check Memory Space
+
+    ```bash
+    free -m
+    ```
+
 
 ## Install Guides
 
