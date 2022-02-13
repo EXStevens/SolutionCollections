@@ -203,7 +203,7 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
 
 1. **Pre-Compile**
 
-    *See all options in [![Option](https://img.shields.io/badge/Offical_Doc-blue)](https://www.php.net/manual/en/configure.about.php#configure.options.misc)*
+    *See all options in [![Option](https://img.shields.io/badge/Offical_Docs-blue)](https://www.php.net/manual/en/configure.about.php#configure.options.misc)*
 
     **Here are the recommanded options(FPM included):**
     ```bash
@@ -211,7 +211,7 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     --with-fpm-user=www --with-fpm-group=www
     ```
 
-    If need to support MySQL, add those options you need. The Directory and Config depend on you env.
+    If need to support MySQL, add those options you need. The Directories and Configs depend on your env.(MySQL there)
 
     ```bash
     --enable-mysqlnd --with-pdo-mysql=mysqlnd --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.sock
@@ -234,8 +234,7 @@ Using it in the Producting Env. is **NOT** recommended.
 
     ```bash
     dnf groupinstall "Development Tools"
-    dnf install openssl openssl-devel
-    dnf install curl-devel
+    dnf install openssl openssl-devel curl-devel
     ```
 
 2. **Download & Unzip**
