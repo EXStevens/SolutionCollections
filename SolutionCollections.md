@@ -1,10 +1,9 @@
 # Solution Collections
 
-(Without any description, solutions have been experimenting on CentOS 8+, Rocky 8) - *2/5/2022*
+(Without any description, solutions have experimented on CentOS 8+, Rocky 8) - *2/5/2022*
 
 ## Linux Guides
 
-***
 
 ### **Change SSH Port**
 
@@ -109,22 +108,52 @@ unzip FILE.zip
 
 ### **SWAP Partition**
 
-1. Check Memory Space
+#### *Check Memory Space*
 
-    ```bash
-    free -m
-    ```
+```bash
+free -m
+```
 
 
+#### *Create a Swap File*
+
+```bash
+dd if=/dev/zero of=SWAPFILE_DIRECTORY bs=1M count=SPACE(MB)
+```
+
+#### *Format the Swap File*
+
+```bash
+mkswap SWAPFILE_DIRECTORY
+```
+
+#### *Turn on/off Swap*
+
+```bash
+swapon SWAP_FILE
+
+swapoff SWAP_FILE / -a(turn off all)
+```
+
+#### *Enable it when boot*
+```bash
+vim /etc/fstab
+```
+Add this in the File
+```bash
+SWAPFILE_DIRECTORY swap swap defaults 0 0
+```
 ## Install Guides
 
-***
 
 ### **PHP 8**
 
 **Use php 8.1.2*
 
 [![Downloads](https://img.shields.io/badge/Downloads-blue "Downloads Page")](https://www.php.net/downloads)
+
+**\*** **Compiling Needs Memory Space!**\
+If the memory space of your device is **Lower than 2GB**, You had better [Create a Swap](#swap-partition).
 
 1. **Download the Source**
 
