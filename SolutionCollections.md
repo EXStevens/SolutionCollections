@@ -11,7 +11,7 @@
 
 ```Bash
 sudo vim /etc/ssh/sshd_config
-// #Port 22 -> Port UR_PORT
+#Port 22 -> Port UR_PORT
 
 systemctl restart sshd
 ```
@@ -20,7 +20,7 @@ systemctl restart sshd
 
 ```Bash
 sudo vim /etc/ssh/sshd_config
-// #Port 22 -> Port UR_PORT
+#Port 22 -> Port UR_PORT
 
 sudo service ssh restart
 ```
@@ -85,7 +85,7 @@ tar -xJf FILE.tar.xz ASSIGNED_FILE (-C OutputDirectory)
 **If need to RETAIN the Original File(s), add parameter "-k" or "--keep"**
 
 ```Bash
-bzip2 -ck FILE
+bzip2 -c FILE
 bzip2 FILE.bz2
 ```
 
@@ -138,9 +138,8 @@ swapoff SWAP_FILE / -a(turn off all)
 #### *Enable it when boot*
 ```bash
 vim /etc/fstab
-```
-Add this in the File
-```bash
+
+# Add this in the File
 SWAPFILE_DIRECTORY swap swap defaults 0 0
 ```
 ## Install Guides
@@ -211,7 +210,7 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     --with-fpm-user=www --with-fpm-group=www
     ```
 
-    If need to support MySQL, add those options you need. The Directories and Configs depend on your env.(MySQL there)
+    If need to support MySQL, add those options you need. The Directories and Configs depend on your env.(MySQL there installed by DNF)
 
     ```bash
     --enable-mysqlnd --with-pdo-mysql=mysqlnd --with-mysqli --with-mysql-sock=/var/lib/mysql/mysql.sock
@@ -223,9 +222,9 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     make && make install
     ```
 
-### **Nginx-quic**
+### **Nginx-QUIC**
 
-*The H3 version of Nginx is Experimental.* \
+*The **H3** version of Nginx is Experimental.* \
 Using it in the Producting Env. is **NOT** recommended.
 
 [![Progress](https://img.shields.io/badge/Progress-blue "Developing Log")](https://hg.nginx.org/nginx-quic/) [![Download](https://img.shields.io/badge/Download_Link-darkgreen "Download Link")](https://hg.nginx.org/nginx-quic/archive/quic.tar.gz)
