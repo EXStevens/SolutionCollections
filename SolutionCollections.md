@@ -162,7 +162,6 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     wget https://www.php.net/distributions/php-8.1.2.tar.gz
 
     tar -xzf php-8.1.2.tar.gz
-    cd php-8.1.2
     ```
 
 1. **Prepare**
@@ -170,7 +169,7 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     ```bash
     dnf groupinstall "Development Tools"
         
-    dnf install libxml2-devel libicu-devel sqlite-devel libxslt-devel libpng-devel libjpeg-devel freetype-devel libzip-devel git
+    dnf install libxml2-devel libicu-devel sqlite-devel libxslt-devel libpng-devel libjpeg-devel freetype-devel libzip-devel git systemd-devel
     ```
 
     Install Oniguruma
@@ -206,8 +205,9 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
 
     **Here are the recommanded options(FPM included):**
     ```bash
-    ./configure --prefix=/usr/local/php/ --with-fpm-systemd --with-openssl --enable-bcmath --with-curl --enable-ftp --enable-gd --enable-mbstring --enable-sockets --enable-pcntl --with-zlib --enable-intl --with-fpm-systemd --enable-pdo --enable-xml --with-zip --with-gettext --with-freetype --enable-opcache --enable-shmop
-    --with-fpm-user=www --with-fpm-group=www
+    cd php-8.1.2
+
+    ./configure --prefix=/usr/local/php/ --enable-fpm --with-openssl --enable-bcmath --with-curl --enable-ftp --enable-gd --enable-mbstring --enable-sockets --enable-pcntl --with-zlib --enable-intl --with-fpm-systemd --enable-pdo --enable-xml --with-zip --with-gettext --with-freetype --enable-opcache --enable-shmop --with-fpm-user=www --with-fpm-group=www
     ```
 
     If need to support MySQL, add those options you need. The Directories and Configs depend on your env.(MySQL there installed by DNF)
@@ -221,7 +221,12 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     ```bash
     make && make install
     ```
+1. **Configure**
 
+    Copy Config File to Install Directory
+    ```bash
+    cp ~/php-8.1.2/php.ini-production /usr/local/php/php.ini
+    ```
 ### **Nginx-QUIC**
 
 *The **H3** version of Nginx is Experimental.* \
