@@ -226,6 +226,7 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     Copy Config File to Install Directory
     ```bash
     cp ~/php-8.1.2/php.ini-production /usr/local/php/php.ini
+    
     ```
 ### **Nginx-QUIC**
 
