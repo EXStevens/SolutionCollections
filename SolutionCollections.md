@@ -168,7 +168,7 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
 
     ```bash
     dnf groupinstall "Development Tools"
-        
+
     dnf install libxml2-devel libicu-devel sqlite-devel libxslt-devel libpng-devel libjpeg-devel freetype-devel libzip-devel git systemd-devel
     ```
 
@@ -226,8 +226,9 @@ If the memory space of your device is **Lower than 2GB**, You had better [Create
     Copy Config File to Install Directory
     ```bash
     cp ~/php-8.1.2/php.ini-production /usr/local/php/php.ini
-    
+    cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
     ```
+
 ### **Nginx-QUIC**
 
 *The **H3** version of Nginx is Experimental.* \
@@ -239,13 +240,14 @@ Using it in the Producting Env. is **NOT** recommended.
 
     ```bash
     dnf groupinstall "Development Tools"
-    dnf install openssl openssl-devel curl-devel
+    dnf install openssl openssl-devel curl-devel pcre pcre-devel zlib zlib-devel
     ```
 
 2. **Download & Unzip**
 
+    We recommand to use [Brotli](https://github.com/google/brotli)
     ```bash
     wget https://hg.nginx.org/nginx-quic/archive/quic.tar.gz
-    
+
     tar -xzf ./quic.tar.gz
     ```
